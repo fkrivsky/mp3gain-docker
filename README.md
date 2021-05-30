@@ -11,12 +11,12 @@ docker run -it \
 -v <path/to/mp3/directory>:/data \
 fkrivsky/mp3gain
 ```
-Can specify parameters with `parameters` env variable:
+Can specify parameters with `parameters` env variable, e.g.:
 ```
 docker run -it \
     --rm \
     --name=mp3gain \
-    -env paramters="-r -d 2.0" \
+    --env parameters="-r -d 2.0" \
     -v <path/to/mp3/directory>:/data \
     fkrivsky/mp3gain
 ```
