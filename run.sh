@@ -1,3 +1,4 @@
 #!/bin/bash
-echo "mp3gain will run with the following parameters: ${parameters}"
-exec find /data -iname '*mp3' -exec mp3gain ${parameters} {} \;
+set -e
+echo "mp3gain will run with the following parameters ${PARAMETERS} in $PARALLEL threads."
+exec find /data -iname '*mp3' | parallel -j $PARALLEL mp3gain ${PARAMETERS} {}\;

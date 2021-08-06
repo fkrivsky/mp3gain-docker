@@ -1,10 +1,11 @@
 #!/bin/sh
-version=hirsute-$(date '+%Y-%m-%d')
+base=hirsute
+version=test-$base-$(date '+%Y-%m-%d')
 
 echo "Building docker image with tag $version..."
-docker build -t fkrivsky/mp3gain:"${version}" .
-docker tag fkrivsky/mp3gain:"${version}" fkrivsky/mp3gain:latest
+docker build -t fkrivsky/mp3gain:"${version}" --build-arg BASE=$base .
 echo "Pushing tag '$version' to registry..."
 docker push fkrivsky/mp3gain:"${version}"
-echo "Pushing tag 'latest' to registry..."
-docker push fkrivsky/mp3gain:latest
+# docker tag fkrivsky/mp3gain:"${version}" fkrivsky/mp3gain:latest
+# echo "Pushing tag 'latest' to registry..."
+# docker push fkrivsky/mp3gain:latest
