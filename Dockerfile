@@ -1,5 +1,5 @@
 ARG ARCH
-FROM ubuntu:hirsute
+FROM ubuntu:jammy
 
 LABEL mantainer="Filip Krivsky <krivsky.filip@protonmail.com>" \
     org.label-schema.build-date=$BUILD_DATE \

@@ -1,5 +1,5 @@
 #!/bin/sh
-version=hirsute-$(date '+%Y-%m-%d')
+version=jammy-$(date '+%Y-%m-%d')
 
 echo "Building docker image with tag $version..."
 docker build -t fkrivsky/mp3gain:"${version}" .
